@@ -44,7 +44,7 @@
             "source-directory": "config"
         },
         "config-plugin": {
-            "params": "common/param/*.php"
+            "params": "yiisoft-aliases.php"
         },
         "installer-types": [
             "bower-asset",
