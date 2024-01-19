@@ -54,23 +54,23 @@ The module directory structure is as follows:
 root
 ├── src                                Assets for FontAwesome Free.
 │   └── Css                            Directory for Css Assets.
-│       └── FontAwesome.php            FontAwesome Free All CSS Asset.
-│       └── FontAwesomeCdn.php         FontAwesome Free All CSS CDN Asset.
-│       └── FontAwesomeBrand.php       FontAwesome Free Brand CSS Asset.
-│       └── FontAwesomeBrandCdn.php    FontAwesome Free Brand CSS CDN Asset.
-│       └── FontAwesomeRegular.php     FontAwesome Free Regular CSS Asset.
-│       └── FontAwesomeRegularCdn.php  FontAwesome Free Regular CSS CDN Asset.
-│       └── FontAwesomeSolid.php       FontAwesome Free Solid CSS Asset.
-│       └── FontAwesomeSolidCdn.php    FontAwesome Free Solid CSS CDN Asset.
+│       └── FontAwesome.php            FontAwesome Free All Asset.
+│       └── FontAwesomeCdn.php         FontAwesome Free All CDN Asset.
+│       └── FontAwesomeBrand.php       FontAwesome Free Brand Asset.
+│       └── FontAwesomeBrandCdn.php    FontAwesome Free Brand CDN Asset.
+│       └── FontAwesomeRegular.php     FontAwesome Free Regular Asset.
+│       └── FontAwesomeRegularCdn.php  FontAwesome Free Regular CDN Asset.
+│       └── FontAwesomeSolid.php       FontAwesome Free Solid Asset.
+│       └── FontAwesomeSolidCdn.php    FontAwesome Free Solid CDN Asset.
 │   └── Js                             Directory for Brand Assets.
-│       └── FontAwesome.php            FontAwesome Free All JS Asset.
-│       └── FontAwesomeCdn.php         FontAwesome Free All JS CDN Asset.
-│       └── FontAwesomeBrand.php       FontAwesome Free Brand JS Asset.
-│       └── FontAwesomeBrandCdn.php    FontAwesome Free Brand JS CDN Asset.
-│       └── FontAwesomeRegular.php     FontAwesome Free Regular JS Asset.
-│       └── FontAwesomeRegularCdn.php  FontAwesome Free Regular JS CDN Asset.
-│       └── FontAwesomeSolid.php       FontAwesome Free Solid JS Asset.
-│       └── FontAwesomeSolidCdn.php    FontAwesome Free Solid JS CDN Asset.
+│       └── FontAwesome.php            FontAwesome Free All Asset.
+│       └── FontAwesomeCdn.php         FontAwesome Free All CDN Asset.
+│       └── FontAwesomeBrand.php       FontAwesome Free Brand Asset.
+│       └── FontAwesomeBrandCdn.php    FontAwesome Free Brand CDN Asset.
+│       └── FontAwesomeRegular.php     FontAwesome Free Regular Asset.
+│       └── FontAwesomeRegularCdn.php  FontAwesome Free Regular CDN Asset.
+│       └── FontAwesomeSolid.php       FontAwesome Free Solid Asset.
+│       └── FontAwesomeSolidCdn.php    FontAwesome Free Solid CDN Asset.
 ├── tests                              Tests for Assets for FontAwesome Free.
 ```
 
