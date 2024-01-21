@@ -31,12 +31,15 @@
         "psr-4": {"Yii\\Asset\\Tests\\": "tests"}
     },
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "infection/extension-installer": true,
             "composer/installers": true,
             "php-forge/foxy": true
-        }
+        },
+        "branch-alias": {
+            "dev-main": "0.1-dev"
+        },
+        "sort-packages": true
     },
     "extra": {
         "config-plugin-options": {
