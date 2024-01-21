@@ -6,12 +6,12 @@ namespace Yii\Asset\Tests\Css;
 
 use Yii\Asset\Css\Depend\DependCdn;
 use Yii\Asset\Css\FontAwesomeSolidCdn;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 final class FontAwesomeSolidCdnTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {

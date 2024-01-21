@@ -13,10 +13,10 @@ use Yiisoft\Assets\AssetLoader;
 use Yiisoft\Assets\AssetManager;
 use Yiisoft\Assets\AssetPublisher;
 
-trait TestTrait
+trait TestSupport
 {
-    protected AssetManager $assetManager;
-    protected AssetPublisher $assetPublisher;
+    private AssetManager $assetManager;
+    private AssetPublisher $assetPublisher;
     private Aliases $aliases;
 
     protected function setUp(): void
@@ -26,7 +26,7 @@ trait TestTrait
                 '@root' => dirname(__DIR__, 2),
                 '@assets' => __DIR__ . '/runtime',
                 '@assetsUrl' => '/',
-                '@fontawesome-free' => '@npm/fortawesome--fontawesome-free',
+                '@fontawesome-free' => '@npm/@fortawesome/fontawesome-free',
                 '@npm' => '@root/node_modules',
             ]
         );

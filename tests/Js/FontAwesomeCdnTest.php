@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Yii\Asset\Tests\Js;
 
 use Yii\Asset\Js\FontAwesomeCdn;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 final class FontAwesomeCdnTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {

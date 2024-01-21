@@ -6,12 +6,12 @@ namespace Yii\Asset\Tests\Js;
 
 use Yii\Asset\Js\Depend\DependCdn;
 use Yii\Asset\Js\FontAwesomeBrandCdn;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 final class FontAwesomeBrandCdnTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {

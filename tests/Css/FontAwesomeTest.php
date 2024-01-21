@@ -6,14 +6,14 @@ namespace Yii\Asset\Tests\Css;
 
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Css\FontAwesome;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 use function runkit_constant_redefine;
 
 final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {
@@ -23,7 +23,9 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
         $this->assertSame(
-            ['/55145ba9/all.css' => ['/55145ba9/all.css']],
+            [
+                '/55145ba9/all.css' => ['/55145ba9/all.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/55145ba9/all.css');
@@ -43,7 +45,9 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
         $this->assertSame(
-            ['/55145ba9/all.min.css' => ['/55145ba9/all.min.css']],
+            [
+                '/55145ba9/all.min.css' => ['/55145ba9/all.min.css'],
+            ],
             $this->assetManager->getCssFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/55145ba9/all.min.css');

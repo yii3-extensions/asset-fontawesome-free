@@ -32,18 +32,21 @@
 
 ## Installation
 
+This package requires [npm](https://www.npmjs.com/) for [php-forge/foxy](https://www.github.com/php-forge/foxy), which
+manages the installation of npm packages and resource compilation.
+
 The preferred way to install this extension is through [composer](https://getcomposer.org/download/).
 
 Either run
 
 ```shell
-composer require --prefer-dist yii3-extensions/asset-fontawesome-free
+composer require --prefer-dist yii3-extensions/asset-fontawesome-free:"^0.1"
 ```
 
 or add
 
 ```json
-"yii3-extensions/asset-fontawesome-free": "^0.1"
+"yii3-extensions/asset-fontawesome-free":"^0.1"
 ```
 
 ## Directory structure
@@ -81,6 +84,11 @@ root
 ## Testing
 
 [Check the documentation testing](/docs/testing.md) to learn about testing.
+
+## Support versions
+
+[![PHP81](https://img.shields.io/badge/PHP-%3E%3D8.1-787CB5)](https://www.php.net/releases/8.1/en.php)
+[![Yii30](https://img.shields.io/badge/Yii%20version-3.0-blue)](https://yiiframework.com)
 
 ## License
 

@@ -6,14 +6,14 @@ namespace Yii\Asset\Tests\Js;
 
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Js\FontAwesomeRegular;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 use function runkit_constant_redefine;
 
 final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {
@@ -23,7 +23,9 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
         $this->assertSame(
-            ['/16b8de20/regular.js' => ['/16b8de20/regular.js']],
+            [
+                '/16b8de20/regular.js' => ['/16b8de20/regular.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/regular.js');
@@ -43,7 +45,9 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
         $this->assertSame(
-            ['/16b8de20/regular.min.js' => ['/16b8de20/regular.min.js']],
+            [
+                '/16b8de20/regular.min.js' => ['/16b8de20/regular.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/regular.min.js');

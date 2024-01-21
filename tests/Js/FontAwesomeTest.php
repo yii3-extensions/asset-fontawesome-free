@@ -6,14 +6,14 @@ namespace Yii\Asset\Tests\Js;
 
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Js\FontAwesome;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 use function runkit_constant_redefine;
 
 final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {
@@ -23,7 +23,9 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
         $this->assertSame(
-            ['/16b8de20/all.js' => ['/16b8de20/all.js']],
+            [
+                '/16b8de20/all.js' => ['/16b8de20/all.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/all.js');
@@ -43,7 +45,9 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
         $this->assertSame(
-            ['/16b8de20/all.min.js' => ['/16b8de20/all.min.js']],
+            [
+                '/16b8de20/all.min.js' => ['/16b8de20/all.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/all.min.js');
