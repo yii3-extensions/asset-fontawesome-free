@@ -23,7 +23,9 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
         $this->assertSame(
-            ['/16b8de20/regular.js' => ['/16b8de20/regular.js']],
+            [
+                '/16b8de20/regular.js' => ['/16b8de20/regular.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/regular.js');
@@ -43,7 +45,9 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
         $this->assertSame(
-            ['/16b8de20/regular.min.js' => ['/16b8de20/regular.min.js']],
+            [
+                '/16b8de20/regular.min.js' => ['/16b8de20/regular.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/regular.min.js');

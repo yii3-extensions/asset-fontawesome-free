@@ -23,7 +23,9 @@ final class FontAwesomeBrandTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeBrand::class));
         $this->assertSame(
-            ['/16b8de20/brands.js' => ['/16b8de20/brands.js']],
+            [
+                '/16b8de20/brands.js' => ['/16b8de20/brands.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/brands.js');
@@ -43,7 +45,9 @@ final class FontAwesomeBrandTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeBrand::class));
         $this->assertSame(
-            ['/16b8de20/brands.min.js' => ['/16b8de20/brands.min.js']],
+            [
+                '/16b8de20/brands.min.js' => ['/16b8de20/brands.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/brands.min.js');

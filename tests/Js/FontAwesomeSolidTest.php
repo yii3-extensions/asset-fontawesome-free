@@ -23,7 +23,9 @@ final class FontAwesomeSolidTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeSolid::class));
         $this->assertSame(
-            ['/16b8de20/solid.js' => ['/16b8de20/solid.js']],
+            [
+                '/16b8de20/solid.js' => ['/16b8de20/solid.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/solid.js');
@@ -43,7 +45,9 @@ final class FontAwesomeSolidTest extends \PHPUnit\Framework\TestCase
 
         $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeSolid::class));
         $this->assertSame(
-            ['/16b8de20/solid.min.js' => ['/16b8de20/solid.min.js']],
+            [
+                '/16b8de20/solid.min.js' => ['/16b8de20/solid.min.js'],
+            ],
             $this->assetManager->getJsFiles()
         );
         $this->assertFileExists(dirname(__DIR__) . '/Support/runtime/16b8de20/solid.min.js');
