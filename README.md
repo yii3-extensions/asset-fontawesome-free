@@ -40,13 +40,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```shell
-composer require --prefer-dist yii3-extensions/asset-fontawesome-free
+composer require --prefer-dist yii3-extensions/asset-fontawesome-free:"^0.1"
 ```
 
 or add
 
 ```json
-"yii3-extensions/asset-fontawesome-free": "^0.1"
+"yii3-extensions/asset-fontawesome-free":"^0.1"
 ```
 
 ## Directory structure
