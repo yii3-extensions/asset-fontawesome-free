@@ -6,14 +6,14 @@ namespace Yii\Asset\Tests\Css;
 
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Css\FontAwesomeSolid;
-use Yii\Asset\Tests\Support\TestTrait;
+use Yii\Asset\Tests\Support\TestSupport;
 use Yiisoft\Assets\AssetBundle;
 
 use function runkit_constant_redefine;
 
 final class FontAwesomeSolidTest extends \PHPUnit\Framework\TestCase
 {
-    use TestTrait;
+    use TestSupport;
 
     public function testRegister(): void
     {
