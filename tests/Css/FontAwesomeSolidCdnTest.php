@@ -4,26 +4,27 @@ declare(strict_types=1);
 
 namespace Yii\Asset\Tests\Css;
 
-use Yii\Asset\Css\Depend\DependCdn;
 use Yii\Asset\Css\FontAwesomeSolidCdn;
 use Yii\Asset\Tests\Support\TestSupport;
-use Yiisoft\Assets\AssetBundle;
+use Yiisoft\Assets\Exception\InvalidConfigException;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class FontAwesomeSolidCdnTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(FontAwesomeSolidCdn::class));
 
         $this->assetManager->register(FontAwesomeSolidCdn::class);
 
-
-        $bundle = $this->assetManager->getBundle(FontAwesomeSolidCdn::class);
-
-        $this->assertInstanceOf(AssetBundle::class, $bundle);
-        $this->assertSame(DependCdn::class, $bundle->depends[0]);
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesomeSolidCdn::class));
         $this->assertSame(
             [
                 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css' => [

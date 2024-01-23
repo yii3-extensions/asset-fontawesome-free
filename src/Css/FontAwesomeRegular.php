@@ -7,6 +7,11 @@ namespace Yii\Asset\Css;
 use Yiisoft\Assets\AssetBundle;
 use Yiisoft\Files\PathMatcher\PathMatcher;
 
+use function defined;
+
+/**
+ * FontAwesome regular CSS bundle.
+ */
 final class FontAwesomeRegular extends AssetBundle
 {
     public string|null $basePath = '@assets';

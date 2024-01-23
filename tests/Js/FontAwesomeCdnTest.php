@@ -6,22 +6,25 @@ namespace Yii\Asset\Tests\Js;
 
 use Yii\Asset\Js\FontAwesomeCdn;
 use Yii\Asset\Tests\Support\TestSupport;
-use Yiisoft\Assets\AssetBundle;
+use Yiisoft\Assets\Exception\InvalidConfigException;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class FontAwesomeCdnTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(FontAwesomeCdn::class));
 
         $this->assetManager->register(FontAwesomeCdn::class);
 
-
-        $bundle = $this->assetManager->getBundle(FontAwesomeCdn::class);
-
-        $this->assertInstanceOf(AssetBundle::class, $bundle);
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesomeCdn::class));
         $this->assertSame(
             [
                 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js' => [

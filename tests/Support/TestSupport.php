@@ -16,7 +16,6 @@ use Yiisoft\Assets\AssetPublisher;
 trait TestSupport
 {
     private AssetManager $assetManager;
-    private AssetPublisher $assetPublisher;
     private Aliases $aliases;
 
     protected function setUp(): void
@@ -55,7 +54,7 @@ trait TestSupport
         $converter = new AssetConverter($aliases, new NullLogger(), [], false);
         $loader = new AssetLoader($aliases, false, [], null, null);
 
-        $this->assetPublisher = (new AssetPublisher($aliases, true, false))
+        $assetPublisher = (new AssetPublisher($aliases, true, false))
             ->withHashCallback(
                 static function (string $path) {
                     return match (str_contains($path, 'css')) {
@@ -67,6 +66,6 @@ trait TestSupport
 
         $manager = new AssetManager($aliases, $loader, [], []);
 
-        return $manager->withConverter($converter)->withPublisher($this->assetPublisher);
+        return $manager->withConverter($converter)->withPublisher($assetPublisher);
     }
 }

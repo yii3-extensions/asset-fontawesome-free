@@ -7,21 +7,27 @@ namespace Yii\Asset\Tests\Css;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Css\FontAwesomeRegular;
 use Yii\Asset\Tests\Support\TestSupport;
-use Yiisoft\Assets\AssetBundle;
+use Yiisoft\Assets\Exception\InvalidConfigException;
 
 use function runkit_constant_redefine;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(FontAwesomeRegular::class));
 
         $this->assetManager->register(FontAwesomeRegular::class);
 
-        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesomeRegular::class));
         $this->assertSame(
             [
                 '/55145ba9/regular.css' => ['/55145ba9/regular.css'],
@@ -34,6 +40,9 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist(dirname(__DIR__) . '/Support/runtime/55145ba9/fontawesome.min.css');
     }
 
+    /**
+     * @throws InvalidConfigException
+     */
     #[RequiresPhp('8.1')]
     public function testRegisterWithEnvironmentProd(): void
     {
@@ -43,7 +52,7 @@ final class FontAwesomeRegularTest extends \PHPUnit\Framework\TestCase
 
         $this->assetManager->register(FontAwesomeRegular::class);
 
-        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesomeRegular::class));
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesomeRegular::class));
         $this->assertSame(
             [
                 '/55145ba9/regular.min.css' => ['/55145ba9/regular.min.css'],
