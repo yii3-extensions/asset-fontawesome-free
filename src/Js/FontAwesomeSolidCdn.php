@@ -6,6 +6,9 @@ namespace Yii\Asset\Js;
 
 use Yiisoft\Assets\AssetBundle;
 
+/**
+ * FontAwesome solid CDN JS bundle.
+ */
 final class FontAwesomeSolidCdn extends AssetBundle
 {
     public bool $cdn = true;

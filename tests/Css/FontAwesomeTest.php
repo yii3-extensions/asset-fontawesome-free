@@ -7,21 +7,27 @@ namespace Yii\Asset\Tests\Css;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use Yii\Asset\Css\FontAwesome;
 use Yii\Asset\Tests\Support\TestSupport;
-use Yiisoft\Assets\AssetBundle;
+use Yiisoft\Assets\Exception\InvalidConfigException;
 
 use function runkit_constant_redefine;
 
+/**
+ * @psalm-suppress PropertyNotSetInConstructor
+ */
 final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 {
     use TestSupport;
 
+    /**
+     * @throws InvalidConfigException
+     */
     public function testRegister(): void
     {
         $this->assertFalse($this->assetManager->isRegisteredBundle(FontAwesome::class));
 
         $this->assetManager->register(FontAwesome::class);
 
-        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesome::class));
         $this->assertSame(
             [
                 '/55145ba9/all.css' => ['/55145ba9/all.css'],
@@ -34,6 +40,9 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
         $this->assertFileDoesNotExist(dirname(__DIR__) . '/Support/runtime/55145ba9/fontawesome.min.css');
     }
 
+    /**
+     * @throws InvalidConfigException
+     */
     #[RequiresPhp('8.1')]
     public function testRegisterWithEnvironmentProd(): void
     {
@@ -43,7 +52,7 @@ final class FontAwesomeTest extends \PHPUnit\Framework\TestCase
 
         $this->assetManager->register(FontAwesome::class);
 
-        $this->assertInstanceOf(AssetBundle::class, $this->assetManager->getBundle(FontAwesome::class));
+        $this->assertTrue($this->assetManager->isRegisteredBundle(FontAwesome::class));
         $this->assertSame(
             [
                 '/55145ba9/all.min.css' => ['/55145ba9/all.min.css'],

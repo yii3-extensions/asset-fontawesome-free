@@ -42,11 +42,11 @@
         "sort-packages": true
     },
     "extra": {
-        "config-plugin-options": {
-            "source-directory": "config"
-        },
         "config-plugin": {
             "params": "yiisoft-aliases.php"
+        },
+        "config-plugin-options": {
+            "source-directory": "config"
         }
     },
     "scripts": {

@@ -7,6 +7,11 @@ namespace Yii\Asset\Css;
 use Yiisoft\Assets\AssetBundle;
 use Yiisoft\Files\PathMatcher\PathMatcher;
 
+use function defined;
+
+/**
+ * FontAwesome brand CSS bundle.
+ */
 final class FontAwesomeBrand extends AssetBundle
 {
     public string|null $basePath = '@assets';
@@ -23,7 +28,7 @@ final class FontAwesomeBrand extends AssetBundle
 
         $this->css = [$cssFiles];
         $this->publishOptions = [
-            'filter' => $pathMatcher->only("**/css/{$cssFiles}", "**/{$fontAwesomeFile}", '**/webfonts/fa-brands*'),
+            'filter' => $pathMatcher->only("**/css/$cssFiles", "**/$fontAwesomeFile", '**/webfonts/fa-brands*'),
         ];
     }
 }

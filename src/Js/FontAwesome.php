@@ -7,6 +7,11 @@ namespace Yii\Asset\Js;
 use Yiisoft\Assets\AssetBundle;
 use Yiisoft\Files\PathMatcher\PathMatcher;
 
+use function defined;
+
+/**
+ * FontAwesome JS bundle.
+ */
 final class FontAwesome extends AssetBundle
 {
     public string|null $basePath = '@assets';
@@ -23,7 +28,7 @@ final class FontAwesome extends AssetBundle
 
         $this->js = [$jsFiles];
         $this->publishOptions = [
-            'filter' => $pathMatcher->only("**/js/{$jsFiles}", "**/{$fontAwesomeFile}", '**/webfonts/*'),
+            'filter' => $pathMatcher->only("**/js/$jsFiles", "**/$fontAwesomeFile", '**/webfonts/*'),
         ];
     }
 }

@@ -6,6 +6,9 @@ namespace Yii\Asset\Css\Depend;
 
 use Yiisoft\Assets\AssetBundle;
 
+/**
+ * FontAwesome CDN CSS bundle.
+ */
 final class DependCdn extends AssetBundle
 {
     public bool $cdn = true;
